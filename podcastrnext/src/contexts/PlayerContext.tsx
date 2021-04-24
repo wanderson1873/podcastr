@@ -87,3 +87,7 @@ export function PlayerContextProvider({ children }: PlayerContextDataProviderPro
     </PlayerContext.Provider>
   )
 }
+
+export const usePlayer = () => {
+   return React.useContext(PlayerContext);
+}
