@@ -23,6 +23,7 @@ export function Player() {
       toggleLoop,
       toggleShuffle,
       setPlayingState,
+      cleanPlayerState,
       playNext,
       playPrevious,
       hasNext,
@@ -41,7 +42,16 @@ export function Player() {
       audioRef.current.addEventListener('timeupdate', event => {
          setProgress(Math.floor(audioRef.current.currentTime));
       })
+   }
 
+   function handleSeek(amount: number) {
+      audioRef.current.currentTime = amount;
+      setProgress(amount);
+   }
+
+   function handleEpisodesEnded () {
+      if(hasNext) playNext();
+      else cleanPlayerState();
    }
 
    const episode = episodeList[currentEpisodeIndex];
@@ -76,6 +86,9 @@ export function Player() {
                <div className={styles.slider}>
                   { episode ? (
                      <Slider 
+                        max={episode.duration}
+                        value={progress}
+                        onChange={handleSeek}
                         trackStyle={{ backgroundColor: '#04d361' }} 
                         railStyle={{ backgroundColor: '#9f75ff' }}
                         handleStyle={{ borderColor: '#04d361', borderWidth: 4 }}
@@ -91,8 +104,9 @@ export function Player() {
                <audio 
                   src={episode.url} 
                   ref={audioRef}
-                  autoPlay
                   loop={isLooping}
+                  autoPlay
+                  onEnded={handleEpisodesEnded}
                   onPlay={() => setPlayingState(true)}
                   onPause={() => setPlayingState(false)}
                   onLoadedMetadata={setupProgressListener}
@@ -102,7 +116,7 @@ export function Player() {
             <div className={styles.buttons}>
                <button 
                   type="button" 
-                  disabled={!episode || episodeList.length == 1}
+                  disabled={!episode || episodeList.length === 1}
                   onClick={toggleShuffle} 
                   className={isShuffling ? styles.isActive : ''}
                >
