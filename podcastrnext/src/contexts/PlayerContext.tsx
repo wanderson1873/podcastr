@@ -14,11 +14,13 @@ type PlayerContextData = {
    currentEpisodeIndex: number;
    isPlaying: boolean;
    isLooping: boolean;
+   isShuffling: boolean;
    playList: (list: Episode[], index: number) => void; 
    play: (episode: Episode) => void;
    setPlayingState: (state: boolean) => void;
    togglePlay: () => void;
    toggleLoop: () => void;
+   toggleShuffle: () => void;
    playNext: () => void;
    playPrevious: () => void;
    hasNext: boolean;
@@ -35,7 +37,8 @@ export function PlayerContextProvider({ children }: PlayerContextDataProviderPro
   const [episodeList, setEpisodeList] = React.useState([]);
   const [currentEpisodeIndex, setCurrentEpisodeIndex] = React.useState(0);
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [isLooping, setIsLooping] = React.useState(false)
+  const [isLooping, setIsLooping] = React.useState(false);
+  const [isShuffling, setIsShuffling] = React.useState(false);
 
   function play(episode: Episode) {
     setEpisodeList([episode]);
@@ -55,7 +58,11 @@ export function PlayerContextProvider({ children }: PlayerContextDataProviderPro
 
   function toggleLoop() {
    setIsLooping(!isLooping);
- }
+  }
+
+  function toggleShuffle() {
+   setIsShuffling(!isShuffling);
+  }
 
   function setPlayingState(state: boolean) {
     setIsPlaying(state);
@@ -65,8 +72,12 @@ export function PlayerContextProvider({ children }: PlayerContextDataProviderPro
   const hasPrevious = currentEpisodeIndex > 0;
   
   function playNext() {
-     if(hasNext) 
-      setCurrentEpisodeIndex(currentEpisodeIndex + 1);
+     if(isShuffling) {
+      const nextRandomEpisodeIndex = Math.floor(Math.random() * episodeList.length);
+      setCurrentEpisodeIndex(nextRandomEpisodeIndex);
+     } if(hasNext) 
+     setCurrentEpisodeIndex(currentEpisodeIndex + 1);
+     
   }
 
   function playPrevious() {
@@ -85,8 +96,10 @@ export function PlayerContextProvider({ children }: PlayerContextDataProviderPro
          playPrevious,
          isPlaying, 
          isLooping,
+         isShuffling,
          togglePlay, 
          toggleLoop,
+         toggleShuffle,
          setPlayingState,
          hasNext,
          hasPrevious,
