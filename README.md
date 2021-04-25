@@ -1,22 +1,20 @@
-# Proffy
+# Podcaster
 
 <p>
   <img src="https://img.shields.io/badge/made%20by-Wanderson%20Oliveira-04D361?style=flat-square">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/wanderson1873/proffy?color=04D361&style=flat-square">
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/wanderson1873/proffy?color=04D361&style=flat-square">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/wanderson1873/podcastr?color=04D361&style=flat-square">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/wanderson1873/podcastr?color=04D361&style=flat-square">
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-04D361?style=flat-square">
   </a>
-  <a href="https://github.com/martins-rafael/proffy/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wanderson1873/proffy?color=04D361&style=flat-square">
+  <a href="https://github.com/martins-rafael/podcastr/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wanderson1873/podcastr?color=04D361&style=flat-square">
   </a>
 </p>
 
-<img align="right" src="web/src/assets/images/landing.svg?raw=true" width="35%" alt="Proffy">
-
 ## Tópicos 
 
-[Sobre o Proffy](#sobre-o-proffy)
+[Sobre o Podcastr](#sobre-o-proffy)
 
 [Tecnologias](#tecnologias)
 
@@ -26,85 +24,44 @@
 
 <br>
 
-## Sobre o Proffy
+<p padding="2rem">
+  <img src=".github/thumb.svg" alt="Home-Page" />
+</p>
+
+## 🔗 Sobre o Podcastr
 
 Proffy é uma aplicação Mobile e Web com o objetivo de conectar alunos e professores. Esta aplicação oferece aos professores a possibilidade de registrar aulas, podendo adicionar informações como a disciplina, custo por hora e horários disponíveis. E aos alunos a possibilidade de buscar pelas aulas cadastradas.
 
-O Proffy foi desenvolvida durante a #NLW2 (Next Level Week 2º Edição) da [Rocketseat](https://rocketseat.com.br/).
+Podcastr foi desenvolvida durante a #NLW5 (Next Level Week 5º Edição) da [Rocketseat](https://rocketseat.com.br/).
 
 <br>
 
-<p align="center">
-  <img src=".github/mockup.png" alt="Página inicial">
-</p>
-
-## Tecnologias
+## 💻 Tecnologias
 
 As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.io/)
-- [Node](https://nodejs.org/en/)
-- [Express](https://expressjs.com/)
-- [SQLite3](https://www.sqlite.org/index.html)
-- [Knex](http://knexjs.org/)
+- [CSS com SASS](https://sass-lang.com/guide)
 
 <br>
 
-## Instalação e uso
+## 🛠 Instalação e uso
 
-### API (Back-end)
-
-```bash
-# Abra um terminal e copie este repositório com o comando
-$ git clone https://github.com/wanderson1873/proffy.git
-# ou use a opção de download.
-
-# Entre na pasta server 
-$ cd proffy/server
-
-# Instale as dependências
-$ yarn install
-
-# Rode o servidor
-$ yarn start
-```
-
-<br>
-
-### Web (Front-end)
 
 ```bash
 # Entre na pasta web com 
-$ cd proffy/web
+$ cd podcastr/podcastrnext
 
 # Instale as dependências
 $ yarn install
 
-# Rode o aplicação
+# Rode a aplicação
 $ yarn start
 ```
 
 <br>
 
-### Mobile (App)
-
-```bash
-# Entre na pasta mobile com 
-$ cd proffy/mobile
-
-# Instale as dependências
-$ yarn install
-
-# Rode o app
-$ yarn start
-
-# Escaneie o QR Code exibido na janela do navegador.
-```
-
-<br>
 
 ## Licença
 <a href="https://opensource.org/licenses/MIT">
