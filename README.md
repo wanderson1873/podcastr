@@ -30,7 +30,8 @@
 
 ## 🔗 Sobre o Podcastr
 
-Proffy é uma aplicação Mobile e Web com o objetivo de conectar alunos e professores. Esta aplicação oferece aos professores a possibilidade de registrar aulas, podendo adicionar informações como a disciplina, custo por hora e horários disponíveis. E aos alunos a possibilidade de buscar pelas aulas cadastradas.
+Podcastr é uma aplicação para ouvir podcasts. Possui opções de, da play, voltar, prosseguir, modo aleatório é repetir.
+Essa aplicação foi desenvolvida utilizando NextJS e ReactJS.
 
 Podcastr foi desenvolvida durante a #NLW5 (Next Level Week 5º Edição) da [Rocketseat](https://rocketseat.com.br/).
 
@@ -38,11 +39,15 @@ Podcastr foi desenvolvida durante a #NLW5 (Next Level Week 5º Edição) da [Roc
 
 ## 💻 Tecnologias
 
+Foi utilizado uma back-end fictício, utilizando [json-server](https://www.npmjs.com/package/json-server).
+
 As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
+
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [CSS com SASS](https://sass-lang.com/guide)
+- [JSON-Server](https://www.npmjs.com/package/json-server)
 
 <br>
 
